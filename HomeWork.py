@@ -90,33 +90,36 @@
 # str += koeff_array[len(koeff_array) - 1]
 # print(str)
 
-import random
+# import random
 
-k = int(input('Введите натуральную степень k: '))
-koeffs = []
-for i in range(k + 1):
-    koeffs.append(random.randint(0, 100))
-print(koeffs)
+# k = int(input('Введите натуральную степень k: '))
+# koeffs = []
+# for i in range(k + 1):
+#     koeffs.append(random.randint(0, 100))
+# print(koeffs)
 
-powers = {0: "\u2070",
-            1: "\u00B9",
-            2: "\u00B2",
-            3: "\u00B3",
-            4: "\u2074",
-            5: "\u2075",
-            6: "\u2076",
-            7: "\u2077",
-            8: "\u2078",
-            9: "\u2079",
-           }
+# powers = {0: "\u2070",
+#             1: "\u00B9",
+#             2: "\u00B2",
+#             3: "\u00B3",
+#             4: "\u2074",
+#             5: "\u2075",
+#             6: "\u2076",
+#             7: "\u2077",
+#             8: "\u2078",
+#             9: "\u2079",
+#            }
 
-str = ''
-for i in range(k - 1):
-    if(koeffs[i] != 0):
-        str += f'{koeffs[i]}' + 'x' + powers[k] + ' + '
-    k -= 1
-if(koeffs[-1] != 0):
-    str +=  f'{koeffs[-1]}' + 'x'
-if(koeffs[-0] != 0):
-    str +=  ' + ' f'{koeffs[-0]}'
-print(str)
+# formula = ''
+# for i in range(k - 1):
+#     if(koeffs[i] != 0):
+#         formula += f'{koeffs[i]}' + 'x' + powers[k] + ' + '
+#     k -= 1
+# if(koeffs[-1] != 0):
+#     formula +=  f'{koeffs[-2]}' + 'x'
+# if(koeffs[-0] != 0):
+#     formula +=  ' + ' f'{koeffs[-1]}'
+# print(formula)
+
+# with open('mnogochlen.txt', 'w', encoding='utf-8') as f:
+#     f.write(formula + '\n')
