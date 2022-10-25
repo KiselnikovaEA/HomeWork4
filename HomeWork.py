@@ -34,17 +34,28 @@
 # Задача 3. Задайте последовательность чисел. Выведите список неповторяющихся элементов
 # Вариант а): список значений без учёта повторений [1, 1, 2, 2, 3, 5] -----> [1, 2, 3, 5]
 
+# def unique_values(some_lst):
+#     unique_values = []
+#     for i in range(len(some_lst)):
+#         if(unique_values.count(some_lst[i]) == 0):
+#             unique_values.append(some_lst[i])
+#     return unique_values
 
+
+# some_list = list(map(int, input().split()))
+# print(unique_values(some_list))
 
 # Вариант б): список уникальных неповторяющихся элементов [1, 1, 2, 2, 3, 5] -----> [3,5]
 
-def unique_values(some_lst):
-    unique_values = []
-    for i in range(len(some_lst)):
-        if(unique_values.count(some_lst[i]) == 0):
-            unique_values.append(some_lst[i])
-    return unique_values
+# def unique_values(some_lst):
+#     unique_values = []
+#     for i in range(len(some_lst)):
+#         # if(unique_values.count(some_lst[i]) == 0):
+#         #     unique_values.append(some_lst[i])
+#         if (some_lst.count(some_lst[i]) == 1):
+#             unique_values.append(some_lst[i])
+#     return unique_values
 
 
-some_list = list(map(int, input().split()))
-print(unique_values(some_list))
+# some_list = list(map(int, input().split()))
+# print(unique_values(some_list))
