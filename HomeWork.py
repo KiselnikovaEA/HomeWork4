@@ -62,36 +62,30 @@
 
 # Задача 4. Задана натуральная степень k. Сформировать случайным образом список коэффициентов (значения от 0 до 100) многочлена и записать в файл многочлен степени k
 
-# import random
+import random
 
-# k = int(input('Введите натуральную степень k: '))
-# koeffs = []
-# for i in range(k + 1):
-#     koeffs.append(random.randint(0, 100))
-# print(koeffs)
+k = int(input('Введите натуральную степень k: '))
+koeffs = [random.randint(0, 100) for _ in range(k+1)]
+print(koeffs)
 
-# powers = {0: "\u2070",
-#             1: "\u00B9",
-#             2: "\u00B2",
-#             3: "\u00B3",
-#             4: "\u2074",
-#             5: "\u2075",
-#             6: "\u2076",
-#             7: "\u2077",
-#             8: "\u2078",
-#             9: "\u2079",
-#            }
+powers = {0: "⁰", 1: "¹", 2: "²", 3: "³", 4: "⁴", 5: "⁵", 6: "⁶", 7: "⁷", 8: "⁸", 9: "⁹"}
 
-# formula = ''
-# for i in range(k - 1):
-#     if(koeffs[i] != 0):
-#         formula += f'{koeffs[i]}' + 'x' + powers[k] + ' + '
-#     k -= 1
-# if(koeffs[-1] != 0):
-#     formula +=  f'{koeffs[-2]}' + 'x'
-# if(koeffs[-0] != 0):
-#     formula +=  ' + ' f'{koeffs[-1]}' + ' = 0'
-# print(formula)
+formula = ''
+for i in range(k - 1):
+    if(koeffs[i] > 1):
+        formula += f'{koeffs[i]}' + 'x' + powers[k] + ' + '
+    elif(koeffs[i] == 1):
+        formula += f'x' + powers[k] + ' + '
+    k -= 1
+if(koeffs[-2] > 1):
+    formula +=  f'{koeffs[-2]}' + 'x'
+elif(koeffs[-2] == 1):
+    formula += 'x'
 
-# with open('mnogochlen.txt', 'w', encoding='utf-8') as f:
-#     f.write(formula + '\n')
+if(koeffs[-1] != 0):
+    formula +=  ' + ' f'{koeffs[-1]}' + ' = 0'
+
+print(formula)
+
+with open('mnogochlen.txt', 'w', encoding='utf-8') as f:
+    f.write(formula + '\n')
